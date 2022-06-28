@@ -1,13 +1,13 @@
-package com.student.ordermanagementproject;
+package com.student.productmanagementproject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OrdermanagementprojectApplication {
+public class ProductmanagementprojectApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OrdermanagementprojectApplication.class, args);
+		SpringApplication.run(ProductmanagementprojectApplication.class, args);
 	}
 
 }
