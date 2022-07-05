@@ -14,7 +14,7 @@ spring:
     open-in-view: false
 
 server:
-  port: 8585
+  port: 8080
   error:
     include-stacktrace: always
     include-message: always

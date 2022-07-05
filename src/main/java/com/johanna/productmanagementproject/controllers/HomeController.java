@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 import java.security.Principal;
 
 @Controller
-@SessionAttributes(value = {"currentUser"})
+//@SessionAttributes(value = {"currentUser"})
 @Slf4j
 public class HomeController {
     UserService userService;
@@ -22,34 +22,34 @@ public class HomeController {
         this.userService = userService;
     }
 
-    @GetMapping(value = {"/", "index"})
-    public String homePage(Principal principal, HttpSession session) {
-        try {
-            // HttpSession session = request.getSession(true);
-
-            if (principal != null) {
-                session.setAttribute("currentUser", userService.findByEmail(principal.getName()));
-                log.info("session get attributes names: " + session.getAttributeNames().asIterator().toString());
-                log.info("session ID: " + session.getId() + " Value of currentUser: " + session.getAttribute("currentUser").toString());
-            }
-
-        } catch (Exception e) {
-            log.warn("homePage Exception!!");
-            e.printStackTrace();
-        }
-        return "home";
-    }
+//    @GetMapping(value = {"/", "index"})
+//    public String homePage(Principal principal, HttpSession session) {
+//        try {
+//            // HttpSession session = request.getSession(true);
+//
+//            if (principal != null) {
+//                session.setAttribute("currentUser", userService.findByEmail(principal.getName()));
+//                log.info("session get attributes names: " + session.getAttributeNames().asIterator().toString());
+//                log.info("session ID: " + session.getId() + " Value of currentUser: " + session.getAttribute("currentUser").toString());
+//            }
+//
+//        } catch (Exception e) {
+//            log.warn("homePage Exception!!");
+//            e.printStackTrace();
+//        }
+//        return "login";
+//    }
 
     @GetMapping("/login")
     public String login() {
         return "login";
     }
 
-    @GetMapping("/contact")
-    public String contact(HttpServletRequest request, Principal principal) {
-        HttpSession session = request.getSession(true);
-        log.info("session ID: " + session.getId() + " Value of currentUser: " + session.getAttribute("currentUser").toString());
-
-        return "contact";
-    }
+//    @GetMapping("/contact")
+//    public String contact(HttpServletRequest request, Principal principal) {
+//        HttpSession session = request.getSession(true);
+//        log.info("session ID: " + session.getId() + " Value of currentUser: " + session.getAttribute("currentUser").toString());
+//
+//        return "contact";
+//    }
 }

@@ -11,6 +11,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
@@ -37,5 +38,9 @@ public class ProductService {
     public void saveOrUpdate(Product p){
         productRepository.save(p);
         log.info(String.format("Product ID Generated: %d Product Name: %s", p.getProductId(), p.getProductName()));
+    }
+
+    public List<Product> findAll(){
+        return productRepository.findAll();
     }
 }

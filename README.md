@@ -2,7 +2,7 @@
 
 # Functionalities:
 - Login for admin
-- Change Password For Admin
+- Register new users
 - Logout Functionality
 - Dashboard For Admin User
 
@@ -17,7 +17,6 @@
 - Edit the exiting product type
 - View detail of the product type
 - Listing of all product type
-
 
 # Technologies used:
 - Spring Boot Web

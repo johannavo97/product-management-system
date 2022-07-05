@@ -31,6 +31,8 @@ public class User {
     @Setter(AccessLevel.NONE)
     String password;
 
+    String contactNumber;
+
     public User(@NonNull String email, @NonNull String name, @NonNull String password) {
         this.email = email;
         this.name = name;

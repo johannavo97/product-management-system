@@ -5,29 +5,79 @@
     <title>Title</title>
 </head>
 <body>
-    <nav th:fragment="nav" class="menu">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <ol>
-          <li class="menu-item"><a href="#0">Home</a></li>
-          <li class="menu-item"><a href="#0">About</a></li>
-          <li class="menu-item">
-            <a href="#0">Widgets</a>
-            <ol class="sub-menu">
-              <li class="menu-item"><a href="#0">Big Widgets</a></li>
-              <li class="menu-item"><a href="#0">Bigger Widgets</a></li>
-              <li class="menu-item"><a href="#0">Huge Widgets</a></li>
-            </ol>
-          </li>
-          <li class="menu-item">
-            <a href="#0">Kabobs</a>
-            <ol class="sub-menu">
-              <li class="menu-item"><a href="#0">Shishkabobs</a></li>
-              <li class="menu-item"><a href="#0">BBQ kabobs</a></li>
-              <li class="menu-item"><a href="#0">Summer kabobs</a></li>
-            </ol>
-          </li>
-          <li class="menu-item"><a href="#0">Contact</a></li>
-        </ol>
-    </nav>
+<div th:fragment="nav" class="sidebar">
+    <div class="logo-details">
+        <i class='bx bxl-c-plus-plus'></i>
+        <span class="logo_name">JV</span>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a href="/templates/dashboard.html" class="active">
+                <i class='bx bx-grid-alt' ></i>
+                <span class="links_name">Dashboard</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-box' ></i>
+                <span class="links_name">Product</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-list-ul' ></i>
+                <span class="links_name">Order list</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-pie-chart-alt-2' ></i>
+                <span class="links_name">Analytics</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-coin-stack' ></i>
+                <span class="links_name">Stock</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-book-alt' ></i>
+                <span class="links_name">Total order</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-user' ></i>
+                <span class="links_name">Team</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-message' ></i>
+                <span class="links_name">Messages</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-heart' ></i>
+                <span class="links_name">Favrorites</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-cog' ></i>
+                <span class="links_name">Setting</span>
+            </a>
+        </li>
+        <li class="log_out">
+            <a href="login.html">
+                <i class='bx bx-log-out'></i>
+                <span class="links_name">Log out</span>
+            </a>
+        </li>
+    </ul>
+</div>
 </body>
 </html>
