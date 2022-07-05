@@ -1,9 +1,9 @@
-package com.student.productmanagementproject.services;
+package com.johanna.productmanagementproject.services;
 
-import com.student.productmanagementproject.data.ProductRepository;
-import com.student.productmanagementproject.data.UserRepository;
-import com.student.productmanagementproject.models.Product;
-import com.student.productmanagementproject.models.User;
+import com.johanna.productmanagementproject.data.ProductRepository;
+import com.johanna.productmanagementproject.data.UserRepository;
+import com.johanna.productmanagementproject.models.Product;
+import com.johanna.productmanagementproject.models.User;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;

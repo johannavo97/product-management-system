@@ -1,6 +1,6 @@
-package com.student.productmanagementproject.controllers;
+package com.johanna.productmanagementproject.controllers;
 
-import com.student.productmanagementproject.services.UserService;
+import com.johanna.productmanagementproject.services.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

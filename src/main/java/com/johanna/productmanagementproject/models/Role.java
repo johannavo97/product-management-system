@@ -1,4 +1,4 @@
-package com.student.productmanagementproject.models;
+package com.johanna.productmanagementproject.models;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;

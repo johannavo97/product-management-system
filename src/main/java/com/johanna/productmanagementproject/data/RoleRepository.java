@@ -1,8 +1,7 @@
-package com.student.productmanagementproject.data;
+package com.johanna.productmanagementproject.data;
 
-import com.student.productmanagementproject.models.Role;
+import com.johanna.productmanagementproject.models.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 
