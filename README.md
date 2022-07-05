@@ -1,5 +1,25 @@
 # product-management-system
-#Technologies used:
+
+# Functionalities:
+- Login for admin
+- Change Password For Admin
+- Logout Functionality
+- Dashboard For Admin User
+
+* Manage Product:
+- Adding new product
+- Edit the exiting product
+- View detail of the product
+- Listing of all product
+
+* Manage Product Type:
+- Adding new product type
+- Edit the exiting product type
+- View detail of the product type
+- Listing of all product type
+
+
+# Technologies used:
 - Spring Boot Web
 - Java
 - Thymeleaf
