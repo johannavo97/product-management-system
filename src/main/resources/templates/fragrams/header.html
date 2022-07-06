@@ -1,18 +1,109 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Dashboard</title>
+    <title>Product Management System</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <head th:fragment="header">
-        <meta charset="UTF-8">
-        <title>School Management System</title>
-        <link rel="stylesheet" href="/static/css/style.css">
-        <!-- Boxicons CDN Link -->
-        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
+    <header th:fragment="header">
+        <div class="sidebar">
+            <div class="logo-details">
+                <i class='bx bxs-like bx-spin'></i>
+                <span class="logo_name">JV</span>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="/templates/dashboard.html" class="active">
+                        <i class='bx bx-grid-alt' ></i>
+                        <span class="links_name">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-box' ></i>
+                        <span class="links_name">Product</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-list-ul' ></i>
+                        <span class="links_name">Adding product</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-user' ></i>
+                        <span class="links_name">Team</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-pie-chart-alt-2' ></i>
+                        <span class="links_name">Adding user</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-coin-stack' ></i>
+                        <span class="links_name">Stock</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-book-alt' ></i>
+                        <span class="links_name">Total order</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class='bx bx-message' ></i>
+                        <span class="links_name">Messages</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-cog' ></i>
+                        <span class="links_name">Setting</span>
+                    </a>
+                </li>
+                <li class="log_out">
+                    <a href="/templates/login.html">
+                        <i class='bx bx-log-out'></i>
+                        <span class="links_name">Log out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <section class="home-section">
+            <nav>
+                <div class="sidebar-button">
+                    <i class='bx bx-menu sidebarBtn'></i>
+                    <span class="dashboard">Dashboard</span>
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="Search...">
+                    <i class='bx bx-search' ></i>
+                </div>
+                <div class="profile-details">
+                    <img src="/static/assets/profile.jpg" alt="">
+                    <span class="admin_name">Johanna Vo</span>
+                    <i class='bx bx-chevron-down' ></i>
+                </div>
+            </nav>
+        
+        
+        </section>
+    </header>
+
+
+
+<script src="/static/js/dashboard.js"></script>
+<script src="/static/js/signup.js.js"></script>
 
 </body>
 </html>
