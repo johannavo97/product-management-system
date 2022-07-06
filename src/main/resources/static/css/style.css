@@ -589,5 +589,11 @@ nav .profile-details i{
     left: 60px;
     width: calc(100% - 60px);
   }
+    .profile-details li ul li{
+        clear: both;
+        width: 100%;
+
+    }
+
 }
 

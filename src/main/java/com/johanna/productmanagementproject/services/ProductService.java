@@ -37,10 +37,21 @@ public class ProductService {
 
     public void saveOrUpdate(Product p){
         productRepository.save(p);
-        log.info(String.format("Product ID Generated: %d Product Name: %s", p.getProductId(), p.getProductName()));
+        log.info(String.format("Product ID Generated: %d Product Name: %s Category: %s", p.getProductId(), p.getProductName(),p.getCategory()));
     }
 
-    public List<Product> findAll(){
+    public List<Product> getAllProducts(){
         return productRepository.findAll();
     }
+
+
+    public Product updateProduct(Product product) {
+        return productRepository.save(product);
+    }
+
+
+    public void deleteProductById(Integer id) {
+        productRepository.deleteById(id);
+    }
+
 }

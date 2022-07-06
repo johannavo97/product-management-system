@@ -24,7 +24,7 @@ import java.util.Set;
 public class Product {
     @NonNull
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int productId;
+    Integer productId;
     @NonNull
     String productName;
 

@@ -63,4 +63,8 @@ public class UserService {
     public List<User> findAllSortedBy(Sort sort){
         return userRepository.findAll(sort);
     }
+
+    public void deleteUserByEmail(String email) {
+        userRepository.deleteUserByEmail(email);
+    }
 }
