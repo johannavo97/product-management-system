@@ -1,9 +1,10 @@
 package com.johanna.productmanagementproject.security;
 
-import com.instructor.springbootdemoproject.data.AuthGroupRepository;
-import com.instructor.springbootdemoproject.models.AuthGroup;
-import com.instructor.springbootdemoproject.models.Student;
-import com.instructor.springbootdemoproject.services.StudentService;
+import com.johanna.productmanagementproject.data.RoleRepository;
+import com.johanna.productmanagementproject.data.UserRepository;
+import com.johanna.productmanagementproject.models.Role;
+import com.johanna.productmanagementproject.models.User;
+import com.johanna.productmanagementproject.services.UserService;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
@@ -20,19 +21,21 @@ import java.util.NoSuchElementException;
 @FieldDefaults(level = AccessLevel.PRIVATE,makeFinal = true)
 public class AppUserDetailsService implements UserDetailsService {
 
-    AuthGroupRepository authGroupRepository;
-    StudentService studentService;
+    RoleRepository roleRepository;
+
+    UserService userService;
+
     @Autowired
-    public AppUserDetailsService(AuthGroupRepository authGroupRepository, StudentService studentService) {
-        this.authGroupRepository = authGroupRepository;
-        this.studentService = studentService;
+    public AppUserDetailsService(RoleRepository roleRepository, UserService userService) {
+        this.roleRepository = roleRepository;
+        this.userService = userService;
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Student student = null;
+        User user = null;
         try {
-             student = studentService.findByEmail(username);
+             user = userService.findByEmail(username);
 
         } catch (NoSuchElementException ex){
             log.warn("Couldn't find email: " + username);
@@ -41,7 +44,7 @@ public class AppUserDetailsService implements UserDetailsService {
             log.warn("Couldn't find email: " + username);
             e.printStackTrace();
         }
-        List<AuthGroup> authGroups = authGroupRepository.findByaEmail(username);
-        return new AppUserPrincipal(student, authGroups);
+        List<Role> authGroups = roleRepository.findByaEmail(username);
+        return new AppUserPrincipal(user, authGroups);
     }
 }

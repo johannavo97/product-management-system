@@ -62,9 +62,9 @@ public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 authorizeRequests().
                 antMatchers("/","/index").permitAll().
 
-                antMatchers("/courses").hasAnyAuthority("ROLE_USER").
-                antMatchers("/courses/**").hasAnyAuthority("ROLE_ADMIN").
-                antMatchers("/students","/students/**").hasAnyAuthority("ROLE_ADMIN").
+                antMatchers("/products").hasAnyAuthority("ROLE_USER").
+                antMatchers("/products/**").hasAnyAuthority("ROLE_ADMIN").
+                antMatchers("/users","/users/**").hasAnyAuthority("ROLE_ADMIN").
                 anyRequest().authenticated().
                 and().
                 formLogin().loginPage("/login").usernameParameter("username").passwordParameter("password").

@@ -1,8 +1,8 @@
 package com.johanna.productmanagementproject.security;
 
 
-import com.instructor.springbootdemoproject.models.AuthGroup;
-import com.instructor.springbootdemoproject.models.Student;
+import com.johanna.productmanagementproject.models.Role;
+import com.johanna.productmanagementproject.models.User;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import org.springframework.security.core.GrantedAuthority;
@@ -17,35 +17,35 @@ import java.util.*;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class AppUserPrincipal implements UserDetails {
 
-    Student student;
-    List<AuthGroup> authGroup;
+    User user;
+    List<Role> role;
 
 
-    public AppUserPrincipal(Student student, List<AuthGroup> authGroup) {
-        this.student = student;
-        this.authGroup = authGroup;
+    public AppUserPrincipal(User user, List<Role> role) {
+        this.user = user;
+        this.role = role;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         // check if list is empty
-        if(authGroup == null) return Collections.emptyList();
+        if(role == null) return Collections.emptyList();
         // init a Set to disallow duplications
         Set<SimpleGrantedAuthority> authorities = new HashSet<>();
-        // loop through authGroup list and adding each role to spring security Simple Granted Authority object
-         authGroup.forEach(auth -> authorities.add(new SimpleGrantedAuthority(auth.getAAuthGroup())));
+        // loop through roleGroup list and adding each role to spring security Simple Granted Authority object
+         role.forEach(auth -> authorities.add(new SimpleGrantedAuthority(auth.getRole())));
          // return the authorities wrapped in SimpleGrantedAuthority
          return authorities;
     }
 
     @Override
     public String getPassword() {
-        return student.getPassword();
+        return user.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return student.getEmail();
+        return user.getEmail();
     }
 
     @Override

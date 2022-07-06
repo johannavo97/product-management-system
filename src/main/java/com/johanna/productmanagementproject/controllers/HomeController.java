@@ -20,7 +20,7 @@ public class HomeController {
     @GetMapping(value = {"/", "index"})
     public String homePage(Principal principal){
         if(principal != null) log.info(principal.getName());
-        return "dashboard";
+        return "index";
     }
 
     @GetMapping("/login")
