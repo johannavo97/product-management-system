@@ -63,11 +63,8 @@ public class ProductController {
         Product existingProduct = productService.findById(id);
         existingProduct.setProductId(id);
         existingProduct.setProductName(product.getProductName());
-        existingProduct.setQty(product.getQty());
         existingProduct.setCategory(product.getCategory());
-        existingProduct.setPurchasePrice(product.getPurchasePrice());
-        existingProduct.setSalePrice(product.getSalePrice());
-        existingProduct.setCustomer(product.getCustomer());
+        existingProduct.setProductPrice(product.getProductPrice());
 
         // save updated product object
         productService.updateProduct(existingProduct);
