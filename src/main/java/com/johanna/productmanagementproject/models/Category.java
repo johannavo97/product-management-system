@@ -1,25 +1,29 @@
 package com.johanna.productmanagementproject.models;
 
 import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Getter
 @Setter
-@ToString
+@Getter
 @RequiredArgsConstructor
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "category")
-public class Category{
+@FieldDefaults(level = AccessLevel.PRIVATE)
+@Table(name = "categories")
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    @NonNull
-    private String categoryName;
+    Integer id;
 
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Product> products;
+    @NonNull
+    String catName;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "category", cascade = CascadeType.ALL)
+    private Set<Product> products = new HashSet<>();
+
 }

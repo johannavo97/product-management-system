@@ -2,8 +2,11 @@ package com.johanna.productmanagementproject;
 
 
 import com.johanna.productmanagementproject.data.RoleRepository;
-import com.johanna.productmanagementproject.models.*;
+import com.johanna.productmanagementproject.models.Category;
+import com.johanna.productmanagementproject.models.Role;
 import com.johanna.productmanagementproject.data.ProductRepository;
+import com.johanna.productmanagementproject.models.Product;
+import com.johanna.productmanagementproject.models.User;
 import com.johanna.productmanagementproject.services.ProductService;
 import com.johanna.productmanagementproject.services.UserService;
 import lombok.AccessLevel;
@@ -62,12 +65,12 @@ public class ApplicationCommandLineRunner implements CommandLineRunner {
         roleRepository.save(new Role(ROGERID,ROLE_USER));
 
 
-        productService.saveOrUpdate(new Product(1,"Addidas shoe",new Category("Shoe")));
-        productService.saveOrUpdate(new Product(2, "Gucci Womens's Bags",50,new Category("Bag"),4.00,4.99,new Customer("Jafer", Customer.type.CUSTOMER)));
-        productService.saveOrUpdate(new Product(3, "Vuitton Sunglasses",20,new Category("Sunglass"),4.50,5.99,new Customer("Alex", Customer.type.WHOLESALER)));
-        productService.saveOrUpdate(new Product(4, "Hourglass Jeans",50,new Category("Jean"),4.00,4.99,new Customer("David", Customer.type.CUSTOMER)));
-        productService.saveOrUpdate(new Product(5, "Nike Sport Shoe",50,new Category("Shoe"),4.00,4.99,new Customer("Martin", Customer.type.WHOLESALER)));
-        productService.saveOrUpdate(new Product(6, "Succi Ladies Bag",50,new Category("Bag"),4.00,4.99,new Customer("Doe", Customer.type.CUSTOMER)));
+        productService.saveOrUpdate(new Product(1,"Addidas shoe",new Category("Shoe"), 4.55));
+        productService.saveOrUpdate(new Product(2, "Gucci Womens's Bags", new Category("Bag"),4.00));
+        productService.saveOrUpdate(new Product(3, "Vuitton Sunglasses",new Category("Sunglass"),4.50));
+        productService.saveOrUpdate(new Product(4, "Hourglass Jeans",new Category("Jean"),4.00));
+        productService.saveOrUpdate(new Product(5, "Nike Sport Shoe",new Category("Shoe"),4.00));
+        productService.saveOrUpdate(new Product(6, "Succi Ladies Bag",new Category("Bag"),4.00));
 
         try {
             userService.addProduct(JOHANNAID, productService.findById(1));
