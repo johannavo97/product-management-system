@@ -23,8 +23,9 @@ public class Product {
     int productId;
     @NonNull
     String productName;
-    @NonNull
-    String productCategory;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "category_id", nullable = false)
+    private Category category;
     @NonNull
     Double productPrice;
 
@@ -37,10 +38,10 @@ public class Product {
         user.getProducts().add(this);
     }
 
-    public Product(int productId, @NonNull String productName, @NonNull String productCategory, @NonNull Double productPrice) {
+    public Product(@NonNull int productId, @NonNull String productName, @NonNull Category category, @NonNull Double productPrice) {
         this.productId = productId;
         this.productName = productName;
-        this.productCategory = productCategory;
+        this.category = category;
         this.productPrice = productPrice;
     }
 
@@ -49,12 +50,12 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return productId == product.productId && productName.equals(product.productName) && productCategory.equals(product.productCategory) && productPrice == product.productPrice;
+        return productId == product.productId && productName.equals(product.productName) && category.equals(product.category) && productPrice == product.productPrice;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(productId,productName, productCategory, productPrice);
+        return Objects.hash(productId,productName, category, productPrice);
 
     }
 }

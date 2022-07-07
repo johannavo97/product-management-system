@@ -4,14 +4,13 @@ spring:
     driver-class-name: org.mariadb.jdbc.Driver
     username: root
     password: root
-    url: jdbc:mariadb://localhost:3306/productmanagementproject?createDatabaseIfNotExist=true
+    url: jdbc:mariadb://localhost:3306/jvmanagement?createDatabaseIfNotExist=true
   jpa:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MariaDB103Dialect
     hibernate:
       ddl-auto: create-drop
-    open-in-view: false
 
 server:
   port: 8080

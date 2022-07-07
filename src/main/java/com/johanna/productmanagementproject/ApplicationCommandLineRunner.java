@@ -2,6 +2,7 @@ package com.johanna.productmanagementproject;
 
 
 import com.johanna.productmanagementproject.data.RoleRepository;
+import com.johanna.productmanagementproject.models.Category;
 import com.johanna.productmanagementproject.models.Role;
 import com.johanna.productmanagementproject.data.ProductRepository;
 import com.johanna.productmanagementproject.models.Product;
@@ -64,11 +65,12 @@ public class ApplicationCommandLineRunner implements CommandLineRunner {
         roleRepository.save(new Role(ROGERID,ROLE_USER));
 
 
-        productService.saveOrUpdate(new Product(1, "Oolong tea","Tea", 4.99));
-        productService.saveOrUpdate(new Product(2, "Jasmine tea","Tea", 5.99));
-        productService.saveOrUpdate(new Product(3, "Non_Dairy Creamer","Powder", 2.99));
-        productService.saveOrUpdate(new Product(4, "Taro Creamer","Powder", 2.99));
-        productService.saveOrUpdate(new Product(5, "Mango Syrup","Syrup", 5.99));
+        productService.saveOrUpdate(new Product(1,"Addidas shoe",new Category("Shoe"), 4.55));
+        productService.saveOrUpdate(new Product(2, "Gucci Womens's Bags", new Category("Bag"),4.00));
+        productService.saveOrUpdate(new Product(3, "Vuitton Sunglasses",new Category("Sunglass"),4.50));
+        productService.saveOrUpdate(new Product(4, "Hourglass Jeans",new Category("Jean"),4.00));
+        productService.saveOrUpdate(new Product(5, "Nike Sport Shoe",new Category("Shoe"),4.00));
+        productService.saveOrUpdate(new Product(6, "Succi Ladies Bag",new Category("Bag"),4.00));
 
         try {
             userService.addProduct(JOHANNAID, productService.findById(1));
