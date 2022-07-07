@@ -6,6 +6,7 @@ import com.johanna.productmanagementproject.services.UserService;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,20 +30,25 @@ public class UserController {
     @GetMapping("/users")
     public String getAllStudents(Model model, Principal principal){
 
-        log.info(principal.getName());
         model.addAttribute("users",userService.findAll());
 
         return "users";
     }
 
     @GetMapping("/users/new")
-    public String createStudentForm(Model model) {
+    public String createStudentForm(@NotNull Model model) {
 
         // create user object to hold user form data
         User user = new User();
         model.addAttribute("user", user);
         return "create_user";
 
+    }
+
+    @GetMapping("/users/edit/{email}")
+    public String editProductForm(@PathVariable String email, Model model) {
+        model.addAttribute("user", userService.findByEmail(email));
+        return "edit_user";
     }
 
     @PostMapping("/users")

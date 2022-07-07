@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
   <!-- Brand -->
-  <a class="navbar-brand" href="#">Product Management System</a>
+	<a class="navbar-brand" href="/productmanagementproject/templates/dashboard.html">Product Management System</a>
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -21,9 +21,13 @@
   <!-- Navbar links -->
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" th:href="@{/students}">Student Management</a>
-      </li>
+		<li class="nav-item">
+			<a class="nav-link" href="/productmanagementproject/templates/products.html">Product Management</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/productmanagementproject/templates/users.html">Member Management</a>
+		</li>
+
     </ul>
   </div>
 </nav>
@@ -32,39 +36,39 @@
 	<div class = "container">
 		<div class = "row">
 			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-				<h1 class = "text-center"> Create New Student </h1>
+				<h1 class = "text-center"> Create New Member </h1>
 				<div class = "card-body">
-					<form th:action="@{/students}" th:object = "${student}" method="POST">
+					<form th:action="@{/users}" th:object = "${user}" method="POST">
 						<div class ="form-group">
-							<label> Student First Name </label>
+							<label> Member  Name </label>
 							<input
 							type = "text"
-							name = "firstName"
-							th:field = "*{firstName}"
+							name = "name"
+							th:field = "*{name}"
 							class = "form-control"
-							placeholder="Enter Student First Name" 
+							placeholder="Enter Member Name"
 							/>
 						</div>
 						
 						<div class ="form-group">
-							<label> Student Last Name </label>
+							<label> Member Email </label>
 							<input
-							type = "text"
-							name = "lastName"
-							th:field = "*{lastName}"
-							class = "form-control"
-							placeholder="Enter Student Last Name" 
-							/>
-						</div>
-						
-						<div class ="form-group">
-							<label> Student Email </label>
-							<input
-							type = "text"
+							type = "email"
 							name = "email"
 							th:field = "*{email}"
 							class = "form-control"
-							placeholder="Enter Student Email" 
+							placeholder="Enter Member Email"
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Password</label>
+							<input
+							type = "password"
+							name = "password"
+							th:field = "*{password}"
+							class = "form-control"
+							placeholder="Enter Password"
 							/>
 						</div>
 						

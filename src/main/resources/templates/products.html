@@ -22,10 +22,10 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" th:href="@{/users">Student Management</a>
+        <a class="nav-link" href="/productmanagementproject/templates/products.html">Product Management</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" th:href="@{/students}">Teacher Management</a>
+        <a class="nav-link" href="/productmanagementproject/templates/users.html">Member Management</a>
       </li>
     </ul>
   </div>
@@ -33,34 +33,36 @@
 
 	<div class ="container">
 		<div class = "row">
-			<h1> List Students </h1>
+			<h1> List Product </h1>
 		</div>
 		
 		<div class = "row">
 			<div class = "col-lg-3">
-				<a th:href = "@{/students/new}" class = "btn btn-primary btn-sm mb-3"> Add Student</a>
+				<a href="/productmanagementproject/templates/create_product.html" class = "btn btn-primary btn-sm mb-3"> Add Product</a>
 			</div>
 		</div>
 		<table class = "table table-striped table-bordered">
 			<thead class = "table-dark">
 				<tr>
-					<th> Student First Name</th>
-					<th> Student Last Name</th>
-					<th> Student Email </th>
+					<th> Product ID</th>
+					<th> Product Name</th>
+					<th> Product Category</th>
+					<th> Product Price</th>
 					<th> Actions </th>
 				</tr>
 			</thead>
 			
 			<tbody>
-				<tr th:each = "student: ${students}">
-					<td th:text = "${student.firstName}"></td>
-					<td th:text = "${student.lastName}"></td>
-					<td th:text = "${student.email}"></td>
+				<tr th:each = "product: ${products}">
+					<td th:text = "${product.productId}"></td>
+					<td th:text = "${product.productName}"></td>
+					<td th:text = "${product.category}"></td>
+					<td th:text = "${product.productPrice}"></td>
 					<td>
-						<a th:href = "@{/students/edit/{id}(id=${student.id})}"
+						<a href="/productmanagementproject/templates/edit_product.html"
 						 class = "btn btn-primary">Update</a>
 						
-						<a th:href = "@{/students/{id}(id=${student.id})}"
+						<a th:href = "@{/products/{id}(id=${product.productId})}"
 						 class = "btn btn-danger">Delete</a>
 						 
 					</td>
