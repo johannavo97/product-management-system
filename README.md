@@ -1,31 +1,28 @@
-# product-management-system
+#User Authentication & Security:
+- Admin login system with Spring Security.
+- Secure password change functionality for admin users.
+- Logout functionality for session management.
 
-# Functionalities:
-- Login for admin
-- Change Password For Admin
-- Logout Functionality
-- Dashboard For Admin User
+#Admin Dashboard:
+- Centralized control panel for managing products and product types.
+  
+#Product Management:
+- Add new products:
+- Edit existing products.
+- View product details.
+- List all products in an organized interface.
+- 
+#Product Type Management:
+- Add new product types.
+- Edit existing product types.
+- View product type details.
+- List all product types efficiently.
 
-* Manage Product:
-- Adding new product
-- Edit the exiting product
-- View detail of the product
-- Listing of all product
-
-* Manage Product Type:
-- Adding new product type
-- Edit the exiting product type
-- View detail of the product type
-- Listing of all product type
-
-
-# Technologies used:
-- Spring Boot Web
-- Java
-- Thymeleaf
-- HTML
-- CSS
-- Bootstrap
-- MariaDB
-- Spring Data JPA with Hibernate
-- Spring Security
+#Technologies Used:
+- Spring Boot Web (Backend Framework)
+- Java (Core Programming Language)
+- Thymeleaf (Server-Side Templating Engine)
+- HTML, CSS, Bootstrap (Front-End Technologies)
+- MariaDB (Database)
+- Spring Data JPA with Hibernate (ORM for Data Persistence)
+- Spring Security (Authentication & Authorization)
