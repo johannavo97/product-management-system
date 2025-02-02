@@ -1,24 +1,24 @@
-#User Authentication & Security:
+##User Authentication & Security:
 - Admin login system with Spring Security.
 - Secure password change functionality for admin users.
 - Logout functionality for session management.
 
-#Admin Dashboard:
+##Admin Dashboard:
 - Centralized control panel for managing products and product types.
   
-#Product Management:
+##Product Management:
 - Add new products:
 - Edit existing products.
 - View product details.
 - List all products in an organized interface.
 - 
-#Product Type Management:
+##Product Type Management:
 - Add new product types.
 - Edit existing product types.
 - View product type details.
 - List all product types efficiently.
 
-#Technologies Used:
+##Technologies Used:
 - Spring Boot Web (Backend Framework)
 - Java (Core Programming Language)
 - Thymeleaf (Server-Side Templating Engine)
